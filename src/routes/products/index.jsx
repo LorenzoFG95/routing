@@ -8,7 +8,7 @@ export default function () {
     <div className="Products">
       {" "}
       {roomList.map(({ name, price, id }) => (
-        <div>
+        <div key={id}>
           <h2>{name}</h2>
           <h3>{`${price}Euro`}</h3>
           <Link to={`/locations/${id}`}>
