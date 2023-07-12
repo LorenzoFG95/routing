@@ -1,6 +1,5 @@
-import style from "./index.scss";
-const About = () => {
-  return <h1>ciao</h1>;
-};
+import styles from "./index.module.scss";
 
-export default About;
+export default function About() {
+  return <h1 className={styles.test}>ciao</h1>;
+}

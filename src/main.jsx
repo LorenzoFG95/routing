@@ -6,30 +6,78 @@ import About from "./routes/about/About.jsx";
 import ProductsStatic from "./routes/products";
 import Contacts from "./routes/contacts/Contacts.jsx";
 import Locations from "./routes/products/Locations.jsx";
+import DefaultLayout from "./layouts/defaultLayout/Defaultlayout.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import Login from "./components/login/Login.jsx";
+import Dashboard from "./routes/Dashboard.jsx";
+import Logout from "./routes/Logout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <DefaultLayout>
+        <App />
+      </DefaultLayout>
+    ),
     errorElement: <Error />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: (
+      <DefaultLayout>
+        <About />
+      </DefaultLayout>
+    ),
   },
   {
     path: "/contacts",
-    element: <Contacts />,
+    element: (
+      <DefaultLayout>
+        <Contacts />
+      </DefaultLayout>
+    ),
   },
   {
     path: "/locations",
-    element: <ProductsStatic />,
+    element: (
+      <DefaultLayout>
+        <ProductsStatic />
+      </DefaultLayout>
+    ),
   },
   {
     path: "/locations/:id",
-    element: <Locations />,
+    element: (
+      <DefaultLayout>
+        <Locations />
+      </DefaultLayout>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <DefaultLayout>
+        <Login />
+      </DefaultLayout>
+    ),
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <DefaultLayout>
+        <Dashboard />
+      </DefaultLayout>
+    ),
+  },
+  {
+    path: "/logout",
+    element: (
+      <DefaultLayout>
+        <Logout />
+      </DefaultLayout>
+    ),
   },
 ]);
 
